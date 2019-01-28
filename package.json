@@ -1,0 +1,26 @@
+{
+  "name": "acft-score-calculator",
+  "version": "1.0.0",
+  "description": "Calculates the score for the ACFT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev-build": "webpack --mode development --devtool source-map",
+    "watch": "webpack --watch --mode development --devtool source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoSpartanDan/ACFT-Score-Calculator.git"
+  },
+  "author": "Daniel Thompson",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^2.1.0",
+    "jquery": "^3.3.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  }
+}

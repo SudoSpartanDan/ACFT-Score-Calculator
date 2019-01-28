@@ -1,0 +1,177 @@
+@mobile: ~"(max-width: 659px)";
+@tablet: ~"(min-width: 600px)";
+@desktop: ~"(min-width: 768px)";
+@large: ~"(min-width: 992px)";
+
+@col-count: 12;
+
+@army-gold: #fec325;
+@army-black: #000000;
+@army-white: #ffffff;
+@army-gray: #bbbbbb;
+@army-fail: #ff0000;
+
+@dark-background-color: #20202c;
+@dark-2-color: #3a3a47;
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+
+html {
+    font-family: "Overpass", sans-serif;
+    background-color: @dark-background-color;
+}
+
+.row {
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    // Column Class Creation
+    [class*="col-"] {
+        float: left;
+        padding: 15px;
+        width: 100%;
+    }
+    each(range(@col-count), {
+        .col-@{value}-sm {
+            width: percentage(round(@value/@col-count, 2));
+        }
+    });
+    each(range(@col-count), {
+        .col-@{value}-md {
+            @media @tablet {
+                width: percentage(round(@value/@col-count, 2));
+            }
+        }
+    });
+    each(range(@col-count), {
+        .col-@{value}-lg {
+            @media @desktop {
+                width: percentage(round(@value/@col-count, 2));
+            }
+        }
+    });
+}
+
+.no-margin-padding {
+    margin: 0;
+    padding: 0;
+}
+
+.non-selectable-text {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.button-style {
+    .non-selectable-text();
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.label-style {
+    .non-selectable-text();
+    @media @tablet {
+        text-align: left;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.legend {
+    p {
+        margin: 0;
+        padding: 5px;
+    }
+    .hvy {
+        background-color: @army-black;
+        color: @army-white;
+    }
+    .sig {
+        background-color: @army-gray;
+        color: @army-black;
+    }
+    .mod {
+        background-color: @army-gold;
+        color: @army-black;
+    }
+}
+
+.input-row {
+    background-color: #f0f0f0;
+    padding: 10px;
+
+    .event-label {
+        .label-style();
+    }
+
+    .input-section {
+        padding: 0;
+        .score-input {
+            border: none;
+            &:invalid {
+                box-shadow: 0 0 5px 1px red;
+            }
+        }
+        .score-label {
+            .label-style();
+        }
+    }
+    
+    
+    [class*="calculated-score-"] {
+        text-align: center;
+        border:none;
+        font-weight: bold;
+    }
+    .calculated-score-none {
+        background-color: @dark-background-color;
+        color: @army-black;
+    }
+    .calculated-score-hvy {
+        background-color: @army-black;
+        color: @army-white;
+    }
+    .calculated-score-sig {
+        background-color: @army-gray;
+        color: @army-black;
+    }
+    .calculated-score-mod {
+        background-color: @army-gold;
+        color: @army-black;
+    }
+    .calculated-score-fail {
+        background-color: @army-fail;
+        color: @army-black;
+    }
+
+    @media @desktop {
+        margin: 0 15%;
+    }
+}
+
+.calculate-button {
+    border: none;
+    background-color: @dark-2-color;
+    color: @army-white;
+    cursor: pointer;
+}
+
+.clear-button {
+    border: none;
+    cursor: pointer;
+}
