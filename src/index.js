@@ -1,6 +1,16 @@
 import less from './style.less';
 import $ from 'jquery';
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./build/service-worker.js').then(registration => {
+            console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+        });
+    });
+}
+
 const scores = require('./scores.json');
 const scoreFilterOperators = {
     'high': function(rawScore, scoreInput) { return rawScore <= scoreInput},
