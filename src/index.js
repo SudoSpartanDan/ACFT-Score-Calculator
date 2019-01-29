@@ -42,13 +42,13 @@ $(document).ready(function(){
     });
 
     $('[id^=\'sprintDragCarryTime-\']').change(function(){
-        $('#sprintDragCarry-score-input').val(parseInt($('#sprintDragCarryTime-minute').val() * 60) + parseInt($('#sprintDragCarryTime-second').val()));
+        $('#sprintDragCarry-score-input').val(parseInt($('#sprintDragCarryTime-minute-score-input').val() * 60) + parseInt($('#sprintDragCarryTime-second-score-input').val()));
         $('[id$=\'-score-output\']').val('');
         clearCalculatedScoreClasses();
     });
 
     $('[id^=\'twoMileRunTime-\']').change(function(){
-        $('#twoMileRun-score-input').val(parseInt($('#twoMileRunTime-minute').val() * 60) + parseInt($('#twoMileRunTime-second').val()));
+        $('#twoMileRun-score-input').val(parseInt($('#twoMileRunTime-minute-score-input').val() * 60) + parseInt($('#twoMileRunTime-second-score-input').val()));
         $('[id$=\'-score-output\']').val('');
         clearCalculatedScoreClasses();
     });

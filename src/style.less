@@ -25,6 +25,10 @@ html {
     background-color: @dark-background-color;
 }
 
+body {
+    margin: 0;
+}
+
 .row {
     &:after {
         content: "";
@@ -95,16 +99,23 @@ html {
 
 
 .header-row {
-    background-color: #f0f0f0;
-    padding: 10px;
+    background-color: @dark-background-color;
+    color: @army-white;
+    margin: 0 auto;
+    width: 100%;
+    height: 100px;
+    position: fixed;
     h1 {
         .no-margin-padding();
     }
     .legend {
-        padding: 15px 0;
-        span {
+        padding: 10px;
+        p {
             margin: 0;
             padding: 5px;
+            border: solid 2px @army-white;
+            float: left;
+            width: 33.3%;
         }
         .hvy {
             background-color: @army-black;
@@ -119,9 +130,8 @@ html {
             color: @army-black;
         }
     }
-    @media @desktop {
-        margin: 0 15%;
-    }
+    
+    
 }
 
 .input-row {
@@ -185,14 +195,37 @@ html {
     }
 }
 
-.calculate-button {
-    border: none;
-    background-color: @dark-2-color;
-    color: @army-white;
-    cursor: pointer;
+.footer-row-spacer {
+    height: 60px;
+    @media @tablet{
+        height: 10px;
+    }
 }
 
-.clear-button {
-    border: none;
-    cursor: pointer;
+.footer-row {
+    bottom: 0;
+    position: fixed;
+    .button-container{
+        background-color: @dark-background-color;
+        width: 100vw;
+        padding: 7px;
+        button {
+            height: 40px;
+            border: solid 2px @army-white;
+            width: 40%;
+            border-radius: 5px;
+        }
+        .calculate-button {
+            background-color: @dark-2-color;
+            color: @army-white;
+            cursor: pointer;
+        }
+        
+        .clear-button {
+            cursor: pointer;
+        }
+    }
+    @media @tablet {
+        position: relative;
+    }
 }

@@ -10,18 +10,17 @@
     <meta name="description" content="ACFT Score Calculator">
 </head>
 <body>
-    <div class="row header-row">
-        <div class="col-12-sm col-6-md">
-            <h1 class="text-center">ACFT Calculator</h1>
-        </div>
-        <div class="col-12-sm col-6-md legend">
-            <div class="row text-center">
-                <span class="col-4-sm mod">Moderate</span>
-                <span class="col-4-sm sig">Significant</span>
-                <span class="col-4-sm hvy">Heavy</span>
+    <div class="header-row">
+        <h1 class="text-center">ACFT Calculator</h1>
+        <div class="legend">
+            <div class="text-center">
+                <p class="mod">Moderate</p>
+                <p class="sig">Significant</p>
+                <p class="hvy">Heavy</p>
             </div>            
         </div>
     </div>
+    <div style="height: 100px;"></div>
     <div class="row input-row">
         <span class="col-12-sm col-4-md event-label" for="deadlift">3RM Deadlift</span>
         <div class="col-8-sm col-6-md input-section">
@@ -56,9 +55,9 @@
         <span class="col-12-sm col-4-md event-label" for="sprintDragCarry">Sprint Drag Carry</span>
         <div class="col-8-sm col-6-md input-section">
             <div class="row">
-                <input class="col-3-sm score-input" type="number" id="sprintDragCarryTime-minute" name="sprintDragCarryMinute" min="0"></input>
+                <input class="col-3-sm score-input" type="number" id="sprintDragCarryTime-minute-score-input" name="sprintDragCarryMinute" min="0"></input>
                 <span class="col-2-sm score-label">m</span>
-                <input class="col-3-sm score-input" type="number" id="sprintDragCarryTime-second" name="sprintDragCarrySecond" min="0" max="60"></input>
+                <input class="col-3-sm score-input" type="number" id="sprintDragCarryTime-second-score-input" name="sprintDragCarrySecond" min="0" max="60"></input>
                 <span class="col-2-sm score-label">s</span>
                 <input hidden type="number" id="sprintDragCarry-score-input"/>
             </div>
@@ -79,9 +78,9 @@
         <span class="col-12-sm col-4-md event-label" for="twoMileRun">Two Mile Run</span>
         <div class="col-8-sm col-6-md input-section">
             <div class="row">
-                <input class="col-3-sm score-input" type="number" id="twoMileRunTime-minute" name="twoMileRunMinute" min="0"></input>
+                <input class="col-3-sm score-input" type="number" id="twoMileRunTime-minute-score-input" name="twoMileRunMinute" min="0"></input>
                 <span class="col-2-sm event-label">m</span>
-                <input class="col-3-sm score-input" type="number" id="twoMileRunTime-second" name="twoMileRunSecond" min="0" max="60"></input>
+                <input class="col-3-sm score-input" type="number" id="twoMileRunTime-second-score-input" name="twoMileRunSecond" min="0" max="60"></input>
                 <span class="col-2-sm event-label">s</span>
                 <input hidden type="number" id="twoMileRun-score-input"/>
             </div>
@@ -89,10 +88,17 @@
         <input class="col-4-sm col-2-md calculated-score-none" disabled id="twoMileRun-score-output"></input>
     </div>
     <div class="row input-row">
-        <button class="col-3-sm calculate-button" type="button" id="calculate-button">Calculate</button>
-        <button class="col-3-sm clear-button" type="button" id="clear-button">Clear</button>
-        <div class="col-4-sm text-center"><span>Total</span></div>
-        <input class="col-2-sm calculated-score-none" disabled id="total-score-output"></input>
+        <div class="col-3-sm"></div>
+        <div class="col-3-sm"></div>
+        <div class="col-2-sm col-4-md text-center"><span>Total</span></div>
+        <input class="col-4-sm col-2-md calculated-score-none" disabled id="total-score-output"></input>
+    </div>
+    <div class="footer-row-spacer"></div>
+    <div class="footer-row text-center">
+        <div class="button-container text-center">
+            <button class="calculate-button" type="button" id="calculate-button">Calculate</button>
+            <button class="clear-button" type="button" id="clear-button">Clear</button>
+        </div>
     </div>
     <script src="./build/main.bundle.js"></script>
 </body>
