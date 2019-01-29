@@ -1,7 +1,19 @@
 {
     "short_name": "ACFT Calc",
     "name": "Army Combat Fitness Test Calculator",
-    "start_url": "./index.html",
+    "icons": [
+        {
+          "src": "./calculator.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "./calculator.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ],
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#bbbbbb",
     "theme_color": "#3a3a47"
